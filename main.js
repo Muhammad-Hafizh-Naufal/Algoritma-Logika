@@ -1,14 +1,20 @@
 // Study Kasus
-// Diberikan sebuah string, tugas kamu adalah untuk membalikkan urutan karakternya.
-// Kamu perlu menuliskan sebuah fungsi yang menerima input berupa string,
-// dan mengembalikan string yang dibalik.
+// Diberikan sebuah bilangan bulat positif, tugas kamu adalah menentukan apakah
+// bilangan tersebut merupakan bilangan prima atau bukan.
+// Bilangan prima adalah bilangan yang hanya dapat dibagi oleh 1 dan dirinya sendiri.
 
-function balikanString(str) {
-  return `Sebelum di balik: ${str}\nSetelah di balik: ${str
-    .split("")
-    .reverse()
-    .join("")}`;
+function cekBilanganPrima(n) {
+  if (n < 2) {
+    return `${n} bukan bilangan prima`;
+  }
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return `${n} bukan bilangan prima`;
+    }
+
+    return `${n} adalah bilangan prima`;
+  }
 }
 
-let input = "TINUTINU";
-console.log(balikanString(input));
+console.log(cekBilanganPrima(17));
