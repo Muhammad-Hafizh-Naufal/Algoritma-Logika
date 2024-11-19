@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Parfum Jasmine",
+    "price": 250000,
+    "category": "Parfum",
+    "stock": 20,
+    "description": "Parfum dengan aroma bunga jasmine yang tahan lama",
+    "image": "jasmine.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Parfum Vanilla",
+    "price": 300000,
+    "category": "Parfum",
+    "stock": 15,
+    "description": "Parfum dengan aroma vanilla manis dan lembut",
+    "image": "vanilla.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Parfum Citrus",
+    "price": 200000,
+    "category": "Parfum",
+    "stock": 10,
+    "description": "Parfum dengan aroma citrus yang segar",
+    "image": "citrus.jpg"
+  }
+]
