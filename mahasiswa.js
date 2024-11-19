@@ -33,6 +33,10 @@ let mahasiswa = [
 
 // ngambil nama mahasiswa dari array
 
-mahasiswa.map((mhs) => {
-  console.log(mhs.name);
+mahasiswa.map((mhs, index) => {
+  console.log(
+    `no : ${index + 1} \nnpm ${mhs.npm} \nnama ${mhs.name} \nkelas ${
+      mhs.class
+    } \n-----------------------------`
+  );
 });
