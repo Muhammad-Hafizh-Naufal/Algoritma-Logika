@@ -1,20 +1,37 @@
-// Study Kasus
-// Diberikan sebuah bilangan bulat positif, tugas kamu adalah menentukan apakah
-// bilangan tersebut merupakan bilangan prima atau bukan.
-// Bilangan prima adalah bilangan yang hanya dapat dibagi oleh 1 dan dirinya sendiri.
+console.log("Belajar JavaScript Dasar");
+console.log("========================");
 
-function cekBilanganPrima(n) {
-  if (n < 2) {
-    return `${n} bukan bilangan prima`;
+// start
+// Latihan 1
+for (let i = 1; i <= 6; i++) {
+  let hasil = "";
+  for (let j = 1; j < i; j++) {
+    hasil += "*";
   }
-
-  for (let i = 2; i < n; i++) {
-    if (n % i === 0) {
-      return `${n} bukan bilangan prima`;
-    }
-
-    return `${n} adalah bilangan prima`;
-  }
+  console.log(hasil);
 }
 
-console.log(cekBilanganPrima(17));
+// Latihan 2
+let i = 1;
+let total = 0;
+
+while (i <= 20) {
+  if (i % 2 === 0) {
+    console.log(i);
+    total += i;
+  }
+  i++;
+}
+console.log(`Total Genap ${total}`);
+
+// Latihan 3
+let i = 1;
+let hasil = 1;
+
+while (i <= 5) {
+  console.log(i);
+  hasil *= i;
+  i++;
+}
+
+console.log(hasil);
