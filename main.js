@@ -2,36 +2,26 @@ console.log("Belajar JavaScript Dasar");
 console.log("========================");
 
 // start
-// Latihan 1
-for (let i = 1; i <= 6; i++) {
-  let hasil = "";
-  for (let j = 1; j < i; j++) {
-    hasil += "*";
-  }
-  console.log(hasil);
-}
-
-// Latihan 2
-let i = 1;
+let nilai = [80, 65, 90, 50, 75];
 let total = 0;
+let jumlahlulus = 0;
+let tertinggi = nilai[0];
 
-while (i <= 20) {
-  if (i % 2 === 0) {
-    console.log(i);
-    total += i;
+for (let i = 0; i < nilai.length; i++) {
+  console.log(nilai[i]);
+
+  if (nilai[i] >= 75) {
+    jumlahlulus += 1;
   }
-  i++;
-}
-console.log(`Total Genap ${total}`);
 
-// Latihan 3
-let i = 1;
-let hasil = 1;
+  if (nilai[i] >= tertinggi) {
+    tertinggi = nilai[i];
+  }
 
-while (i <= 5) {
-  console.log(i);
-  hasil *= i;
-  i++;
+  total += nilai[i];
 }
 
-console.log(hasil);
+console.log(`total: ${total}`);
+console.log(`total siswa lulus: ${jumlahlulus}`);
+console.log(`nilai tertinggi: ${tertinggi}`);
+console.log(`Rata-rata: ${total / nilai.length}`);
