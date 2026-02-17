@@ -3,15 +3,26 @@ console.log("========================");
 
 // start
 
-var countSheep = function (num) {
-  let gabungkan = "";
-  if (num === 0) return "";
+let siswa = [
+  { nama: "Budi", nilai: 80 },
+  { nama: "Ani", nilai: 65 },
+  { nama: "Citra", nilai: 90 },
+  { nama: "Dedi", nilai: 75 },
+  { nama: "Eka", nilai: 88 },
+];
 
-  for (let i = 1; i <= num; i++) {
-    gabungkan += `${i} sheep...`;
+for (let n of siswa) {
+  console.log(n.nama, n.nilai);
+}
+
+function namalulus() {
+  let lulus = siswa
+    .filter((s) => s.nilai >= 75)
+    .map((s) => ({ nama: s.nama, nilai: s.nilai }));
+
+  for (let n of lulus) {
+    console.log(`siswa lulus: ${n.nama} dengan nilai: ${n.nilai}`);
   }
+}
 
-  return gabungkan;
-};
-
-console.log(countSheep(3));
+namalulus();
