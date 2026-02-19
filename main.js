@@ -2,27 +2,17 @@ console.log("Belajar JavaScript Dasar");
 console.log("========================");
 
 // start
-
 let siswa = [
-  { nama: "Budi", nilai: 80 },
-  { nama: "Ani", nilai: 65 },
-  { nama: "Citra", nilai: 90 },
-  { nama: "Dedi", nilai: 75 },
-  { nama: "Eka", nilai: 88 },
+  { nama: "Budi", jurusan: "IPA", nilai: 80 },
+  { nama: "Ani", jurusan: "IPS", nilai: 65 },
+  { nama: "Citra", jurusan: "IPA", nilai: 90 },
+  { nama: "Dedi", jurusan: "IPS", nilai: 75 },
+  { nama: "Eka", jurusan: "IPA", nilai: 88 },
+  { nama: "Fajar", jurusan: "IPS", nilai: 92 },
 ];
 
-for (let n of siswa) {
-  console.log(n.nama, n.nilai);
-}
+let siswaIpa = [...siswa].filter((s) => s.jurusan === "IPA");
+console.log(siswaIpa);
 
-function namalulus() {
-  let lulus = siswa
-    .filter((s) => s.nilai >= 75)
-    .map((s) => ({ nama: s.nama, nilai: s.nilai }));
-
-  for (let n of lulus) {
-    console.log(`siswa lulus: ${n.nama} dengan nilai: ${n.nilai}`);
-  }
-}
-
-namalulus();
+let siswaIps = [...siswa].filter((s) => s.jurusan === "IPS");
+console.log(siswaIps);
