@@ -1,29 +1,29 @@
 console.log("Belajar JavaScript Dasar");
 console.log("========================");
 
-// start
-let siswa = [
-  { nama: "Budi", jurusan: "IPA", nilai: 80 },
-  { nama: "Ani", jurusan: "IPS", nilai: 65 },
-  { nama: "Citra", jurusan: "IPA", nilai: 90 },
-  { nama: "Dedi", jurusan: "IPS", nilai: 75 },
-  { nama: "Eka", jurusan: "IPA", nilai: 88 },
-  { nama: "Fajar", jurusan: "IPS", nilai: 92 },
+let cart = [
+  { nama: "Laptop", harga: 7000000, qty: 1 },
+  { nama: "Mouse", harga: 200000, qty: 2 },
+  { nama: "Keyboard", harga: 500000, qty: 1 },
+  { nama: "Monitor", harga: 3000000, qty: 2 },
 ];
 
-// Tampilkan hanya siswa jurusan IPA
-let siswaIpa = [...siswa].filter((s) => s.jurusan === "IPA");
-console.log(siswaIpa);
+let totalharga = cart.reduce((total, b) => total + b.qty * b.harga, 0);
+console.log(`Total Belanja: `, totalharga);
 
-// Hitung rata-rata nilai jurusan IPS saja
-let siswaIps = [...siswa].filter((s) => s.jurusan === "IPS");
-let ratarata = [...siswaIps].reduce((a, b) => a + b.nilai, 0) / siswaIps.length;
-console.log(`rata rata Ips: ${ratarata}`);
+let totalqty = cart.map((item) => {
+  return {
+    nama: item.nama,
+    qty: item.qty,
+    item: item.harga * item.qty,
+  };
+});
 
-// Cari siswa dengan nilai tertinggi dari semua jurusan
-let tertinggi = [...siswa].reduce((max, b) => (max >= b.nilai ? max : b));
-console.log(`siswa dengan nilai paling tinggi`, tertinggi.nama);
+for (let n of totalqty) {
+  console.log(`${n.nama} (x${n.qty}) - ${n.item}`);
+}
 
-// ranking
-let rank = [...siswa].sort((a, b) => b.nilai - a.nilai).slice(0, 3);
-console.log(`ranking:`, rank);
+let harting = [...totalqty].sort((a, b) => b.item - a.item).slice(0, 1);
+for (let n of harting) {
+  console.log(`Barang Termahal: ${n.nama} - ${n.item}`);
+}
