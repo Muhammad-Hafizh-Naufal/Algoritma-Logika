@@ -1,24 +1,34 @@
+console.log("Algoritma & Logika");
+console.log("-------------------");
 let siswa = [
-  { nama: "Andi", nilai: [80, 75, 90] },
-  { nama: "Budi", nilai: [60, 70, 65] },
-  { nama: "Citra", nilai: [95, 85, 100] },
-  { nama: "Dina", nilai: [70, 72, 68] },
+  { nama: "Andi", nilai: 80 },
+  { nama: "Budi", nilai: 65 },
+  { nama: "Citra", nilai: 90 },
+  { nama: "Dina", nilai: 70 },
 ];
 
-let hitung = siswa.map((item) => {
-  let total = item.nilai.reduce((acc, curr) => acc + curr, 0);
-  let rata = total / item.nilai.length;
+// nama
+let nama = siswa.map((s) => s.nama);
 
+for (let n of nama) {
+  console.log(n);
+}
+
+// total nilai
+let total = siswa.reduce((total, item) => total + item.nilai, 0);
+console.log(`total seluruh nilai siswa: ${total}`);
+
+// nilai di atas 75
+let kkm = siswa.filter((siswa) => siswa.nilai >= 75);
+for (let n of kkm) {
+  console.log(`nilai di atas 75: ${n.nama} dengan nilai ${n.nilai}`);
+}
+
+let hasil = siswa.map((s) => {
   return {
-    nama: item.nama,
-    rataRata: Math.ceil(rata),
-    status: rata >= 75 ? "Lulus" : "Tidak Lulus",
+    nama: s.nama,
+    status: s.nilai >= 75 ? "lulus" : "tidak lulus",
   };
 });
 
-let ranking = hitung.sort((a, b) => {
-  return b.rataRata - a.rataRata;
-});
-
-console.log(hitung);
-console.log(ranking);
+console.log(hasil);
