@@ -1,42 +1,24 @@
-let mahasiswa = [
-  {
-    id: 1,
-    npm: "210001",
-    name: "John Doe",
-    class: "TI-1A",
-  },
-  {
-    id: 2,
-    npm: "210002",
-    name: "Timmy Doe",
-    class: "T3-1A",
-  },
-  {
-    id: 3,
-    npm: "123456",
-    name: "Jail",
-    class: "TI-1A",
-  },
-  {
-    id: 4,
-    npm: "6543321",
-    name: "Tintin",
-    class: "KA-1A",
-  },
-  {
-    id: 5,
-    npm: "010203",
-    name: "Joseph Stalin",
-    class: "BE-1A",
-  },
+let siswa = [
+  { nama: "Andi", nilai: [80, 75, 90] },
+  { nama: "Budi", nilai: [60, 70, 65] },
+  { nama: "Citra", nilai: [95, 85, 100] },
+  { nama: "Dina", nilai: [70, 72, 68] },
 ];
 
-// ngambil nama mahasiswa dari array
+let hitung = siswa.map((item) => {
+  let total = item.nilai.reduce((acc, curr) => acc + curr, 0);
+  let rata = total / item.nilai.length;
 
-mahasiswa.map((mhs, index) => {
-  console.log(
-    `no : ${index + 1} \nnpm ${mhs.npm} \nnama ${mhs.name} \nkelas ${
-      mhs.class
-    } \n-----------------------------`
-  );
+  return {
+    nama: item.nama,
+    rataRata: Math.ceil(rata),
+    status: rata >= 75 ? "Lulus" : "Tidak Lulus",
+  };
 });
+
+let ranking = hitung.sort((a, b) => {
+  return b.rataRata - a.rataRata;
+});
+
+console.log(hitung);
+console.log(ranking);
