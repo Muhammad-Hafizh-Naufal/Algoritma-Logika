@@ -27,18 +27,29 @@ for (let n of harting) {
 
 console.log("=============================================");
 
-let totalqty = cart.reduce((total, b) => total + b.qty, 0);
-console.log(`Total Qty: ${totalqty}`);
+function hitungcart(c) {
+  let totalqty = c.reduce((total, b) => total + b.qty, 0);
+  // console.log(`Total Qty: ${totalqty}`);
 
-let totalharga = cart.reduce((total, b) => total + b.qty * b.harga, 0);
-console.log(`Total Belanja: `, totalharga);
+  let totalharga = c.reduce((total, b) => total + b.qty * b.harga, 0);
+  // console.log(`Total Belanja: `, totalharga);
 
-let diskon = totalharga > 10000000 ? totalharga * 0.1 : 0;
+  let diskon = totalharga > 10000000 ? totalharga * 0.1 : 0;
 
-let setelahDiskon = totalharga - diskon;
-console.log("Setelah Diskon:", setelahDiskon);
+  let setelahDiskon = totalharga - diskon;
+  // console.log("Setelah Diskon:", setelahDiskon);
 
-let pajak = setelahDiskon * 0.11;
+  let pajak = setelahDiskon * 0.11;
 
-let totalAkhir = setelahDiskon + pajak;
-console.log("Total Akhir + pajak 11%:", totalAkhir);
+  let totalAkhir = setelahDiskon + pajak;
+  // console.log("Total Akhir + pajak 11%:", totalAkhir);
+
+  return {
+    totalqty: totalqty,
+    totalharga: totalharga,
+    setelahDiskon: setelahDiskon,
+    totalAkhir: totalAkhir,
+  };
+}
+
+console.log(hitungcart(cart));

@@ -1,9 +1,26 @@
-let angka = [5, 10, 15, 20];
+console.log("Belajar JavaScript Dasar");
+console.log("=============================================");
 
-let hasil = angka.filter((a) => a >= 10);
-let dikali = hasil.map((a) => a * 3);
-let total = dikali.reduce((total, a) => total + a, 0);
+const cart = [
+  { nama: "Laptop", harga: 7000000, qty: 1 },
+  { nama: "Mouse", harga: 200000, qty: 2 },
+  { nama: "Keyboard", harga: 500000, qty: 1 },
+  { nama: "Monitor", harga: 3000000, qty: 2 },
+];
 
-console.log(hasil);
-console.log(dikali);
-console.log(total);
+let items = cart.map(({ nama, harga, qty }) => ({
+  nama,
+  harga,
+  qty,
+  total: harga * qty,
+}));
+
+items.forEach(({ nama, qty, total }) => {
+  console.log(`${nama} ${qty} ${total}`);
+});
+
+let itemtermahal = items.reduce((max, item) =>
+  item.total > max.total ? item : max,
+);
+
+console.log(itemtermahal);
