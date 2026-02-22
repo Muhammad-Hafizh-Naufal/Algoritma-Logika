@@ -1,26 +1,12 @@
-// Cek Bilangan Ganjil / Genap
-function cekAngka(n) {
-  let cek = n % 2 === 0 ? "Angka Genap" : "Angka Ganjil";
-  return cek;
-}
+// Hitung Rata-rata Siswa
+let siswa = [
+  { nama: "Andi", nilai: 80 },
+  { nama: "Budi", nilai: 70 },
+  { nama: "Citra", nilai: 90 },
+];
 
-console.log(cekAngka(2));
-console.log(cekAngka(5));
+let ratarata = siswa.reduce((total, s) => total + s.nilai, 0) / siswa.length;
+console.log(`ratarata: ${ratarata}`);
 
-// Hitung Total Arr
-let angka = [10, 20, 30, 40];
-function TotalArr(n) {
-  let total = 0;
-  for (let i = 0; i < n.length; i++) {
-    total += angka[i];
-  }
-  return total;
-}
-console.log(TotalArr(angka));
-
-//  Balik String
-function balikKata(kata) {
-  let hasil = kata.split("").reverse().join("");
-  return console.log(hasil);
-}
-balikKata("aku");
+let cekNilai = siswa.filter((n) => n.nilai > ratarata);
+console.log(` Nilai di atas rata-rata: `, cekNilai);
