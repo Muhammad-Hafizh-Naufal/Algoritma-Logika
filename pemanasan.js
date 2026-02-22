@@ -1,12 +1,27 @@
-// Hitung Rata-rata Siswa
-let siswa = [
-  { nama: "Andi", nilai: 80 },
-  { nama: "Budi", nilai: 70 },
-  { nama: "Citra", nilai: 90 },
+// Total Belanja (Studi Kasus Keranjang)
+let cart = [
+  { nama: "Laptop", harga: 7000000, qty: 1 },
+  { nama: "Mouse", harga: 200000, qty: 2 },
+  { nama: "Keyboard", harga: 500000, qty: 1 },
 ];
 
-let ratarata = siswa.reduce((total, s) => total + s.nilai, 0) / siswa.length;
-console.log(`ratarata: ${ratarata}`);
+let kalkulasi = cart.map((items) => {
+  let totalbrg = items.qty * items.harga;
 
-let cekNilai = siswa.filter((n) => n.nilai > ratarata);
-console.log(` Nilai di atas rata-rata: `, cekNilai);
+  return {
+    nama: items.nama,
+    qty: items.qty,
+    totalbrg: totalbrg,
+  };
+});
+
+let totalharga = kalkulasi.reduce((total, b) => total + b.totalbrg, 0);
+
+let hargafinal = 0;
+if (totalharga > 7000000) {
+  hargafinal = totalharga - totalharga * 0.1;
+}
+
+console.log(kalkulasi);
+console.log(`Total Harga ${totalharga}`);
+console.log(`harga final : ${hargafinal}`);
