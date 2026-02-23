@@ -1,25 +1,15 @@
-let mahasiswa = [
-  { nama: "Andi", nilai: 85 },
-  { nama: "Budi", nilai: 60 },
-  { nama: "Citra", nilai: 75 },
+let nilai = [
+  { nama: "Andi", skor: 85 },
+  { nama: "Budi", skor: 92 },
+  { nama: "Citra", skor: 88 },
 ];
 
-let penilaian = mahasiswa.map((mhs) => {
-  let hasil = "";
-
-  if (mhs.nilai >= 75) {
-    hasil = "lulus";
-  } else if (mhs.nilai >= 60) {
-    hasil = "remedial";
-  } else {
-    hasil = "tidak lulus";
-  }
-
-  return {
-    nama: mhs.nama,
-    nilai: mhs.nilai,
-    status: hasil,
-  };
-});
-
-console.log(penilaian);
+let urutkan = nilai
+  .sort((max, n) => n.skor - max.skor)
+  .map((siswa, index) => {
+    return {
+      ...siswa,
+      ranking: index + 1,
+    };
+  });
+console.log(urutkan);
