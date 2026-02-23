@@ -1,13 +1,14 @@
-let loop = 30;
-
-for (let i = 1; i <= loop; i++) {
-  if ([i] % 3 === 0 && [i] % 5 === 0) {
-    console.log(`FizzBuzz`);
-  } else if ([i] % 3 === 0) {
-    console.log(`Fizz`);
-  } else if ([i] % 5 === 0) {
-    console.log(`Buzz`);
-  } else {
-    console.log(i);
+function hitunghuruf(kalimat) {
+  let hasil = {};
+  for (let huruf of kalimat) {
+    if (hasil[huruf]) {
+      hasil[huruf] += 1;
+    } else {
+      hasil[huruf] = 1;
+    }
   }
+
+  return hasil;
 }
+
+console.log(hitunghuruf("jawa"));
