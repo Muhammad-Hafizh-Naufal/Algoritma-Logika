@@ -2,9 +2,10 @@ let nilai = [
   { nama: "Andi", skor: 85 },
   { nama: "Budi", skor: 92 },
   { nama: "Citra", skor: 88 },
+  { nama: "dita", skor: 88 },
 ];
 
-let urutkan = nilai
+let urutkan = [...nilai]
   .sort((max, n) => n.skor - max.skor)
   .map((siswa, index) => {
     return {

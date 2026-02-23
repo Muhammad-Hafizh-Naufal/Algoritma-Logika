@@ -53,3 +53,5 @@ function hitungcart(c) {
 }
 
 console.log(hitungcart(cart));
+
+
