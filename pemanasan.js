@@ -1,17 +1,13 @@
-let data = [
-  { nama: "Andi", nilai: [80, 75, 90] },
-  { nama: "Budi", nilai: [60, 70, 65] },
-  { nama: "Citra", nilai: [95, 85, 100] },
-];
+let loop = 30;
 
-let terbaik = data
-  .map((siswa) => {
-    const total = siswa.nilai.reduce((t, n) => t + n, 0);
-    return {
-      nama: siswa.nama,
-      ratarata: total / siswa.nilai.length,
-    };
-  })
-  .reduce((max, siswa) => (siswa.ratarata > max.ratarata ? siswa : max));
-
-console.log(terbaik);
+for (let i = 1; i <= loop; i++) {
+  if ([i] % 3 === 0 && [i] % 5 === 0) {
+    console.log(`FizzBuzz`);
+  } else if ([i] % 3 === 0) {
+    console.log(`Fizz`);
+  } else if ([i] % 5 === 0) {
+    console.log(`Buzz`);
+  } else {
+    console.log(i);
+  }
+}
