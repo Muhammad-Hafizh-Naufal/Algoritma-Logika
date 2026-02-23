@@ -4,18 +4,14 @@ let data = [
   { nama: "Citra", nilai: [95, 85, 100] },
 ];
 
-let rata = data.map((siswa) => {
-  let total = siswa.nilai.reduce((t, n) => t + n, 0) / siswa.nilai.length;
+let terbaik = data
+  .map((siswa) => {
+    const total = siswa.nilai.reduce((t, n) => t + n, 0);
+    return {
+      nama: siswa.nama,
+      ratarata: total / siswa.nilai.length,
+    };
+  })
+  .reduce((max, siswa) => (siswa.ratarata > max.ratarata ? siswa : max));
 
-  return {
-    nama: siswa.nama,
-    ratarata: Math.ceil(total),
-  };
-});
-console.log(rata);
-
-let nilaiTerbesar = rata.reduce((max, siswa) => {
-  return siswa.ratarata > max.ratarata ? siswa : max;
-});
-
-console.log(nilaiTerbesar);
+console.log(terbaik);
